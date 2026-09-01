@@ -1,5 +1,7 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>HIRO'S PORTFOLIO</title>
@@ -12,8 +14,10 @@
     <meta property="og:title" content="HIRO'S PORTFOLIO">
     <meta property="og:description" content="VBAやPythonを使った業務効率化ツールの開発が専門。Automation Engineer based in Tokyo.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-domain.com"><!-- ドメイン決まったら差し替え -->
-    <meta property="og:image" content="https://your-domain.com/assets/images/thissite.png"><!-- ドメイン決まったら差し替え -->
+    <!-- ドメイン決まったら差し替え -->
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:image" content="https://your-domain.com/assets/images/thissite.png">
+    <!-- ここまで -->
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="ja_JP">
@@ -26,10 +30,13 @@
     <meta name="twitter:image" content="https://your-domain.com/assets/images/thissite.png"><!-- ドメイン決まったら差し替え -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div id="cursor"></div>
@@ -37,7 +44,9 @@
 
     <div id="loading">
         <div class="loading-inner">
-            <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+            <div class="loading-bar-wrap">
+                <div class="loading-bar"></div>
+            </div>
             <p class="loading-text">INITIALIZING<span class="blink">_</span></p>
         </div>
     </div>
@@ -62,12 +71,12 @@
 
     <!-- モバイルメニュー -->
     <div class="mobile-menu" id="mobile-menu">
-        <a href="#hero"       onclick="closeMenu()">HOME</a>
-        <a href="#about"      onclick="closeMenu()">ABOUT</a>
-        <a href="#career"     onclick="closeMenu()">CAREER</a>
-        <a href="#skills"     onclick="closeMenu()">SKILLS</a>
-        <a href="#portfolio"  onclick="closeMenu()">PORTFOLIO</a>
-        <a href="#contact"    onclick="closeMenu()">CONTACT</a>
+        <a href="#hero" onclick="closeMenu()">HOME</a>
+        <a href="#about" onclick="closeMenu()">ABOUT</a>
+        <a href="#career" onclick="closeMenu()">CAREER</a>
+        <a href="#skills" onclick="closeMenu()">SKILLS</a>
+        <a href="#portfolio" onclick="closeMenu()">PORTFOLIO</a>
+        <a href="#contact" onclick="closeMenu()">CONTACT</a>
     </div>
 
     <!-- HERO -->
@@ -78,7 +87,8 @@
             <p class="hero-sub">業務自動化 <span class="accent">/</span> 効率化ツールの開発</p>
             <div class="hero-btns">
                 <a href="#portfolio" class="btn-hero">VIEW WORK</a>
-                <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" class="btn-hero btn-ghost">
+                <a href="https://github.com/example" target="_blank" rel="noopener noreferrer"
+                    class="btn-hero btn-ghost">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
             </div>
@@ -145,7 +155,7 @@
                 <div class="timeline-item">
                     <div class="timeline-date">2017.05</div>
                     <div class="timeline-content">
-                        <p class="timeline-company">株式会社 学研教育みらい</p>
+                        <p class="timeline-company">株式会社 学研教育みらい（アルバイト）</p>
                         <p class="timeline-role">Learning Support Specialist(Part-Time Job)</p>
                         <p class="timeline-desc">某自治体、学習支援事業にて指導員 / 家庭教師として従事。</p>
                         <p class="timeline-desc">講師のリーダーとして、勤務状況や進捗度合いを管理。</p>
@@ -173,6 +183,32 @@
 
                             <div class="timeline-child">
                                 <div class="timeline-child-date">2023.03</div>
+                                <div class="timeline-child-content">
+                                    <p class="timeline-child-place">現場C（某臨床検査事業）</p>
+                                    <p class="timeline-child-role">Data Management Specialist</p>
+                                    <p class="timeline-desc">病院等施設の基本情報、設定情報などの正確性を確認、DB投入を実施。</p>
+                                    <p class="timeline-child-role">VBA Developer</p>
+                                    <p class="timeline-desc">上記作業の効率化, 工数削減の為のVBAツールを開発。</p>
+                                    <p class="timeline-child-role">Operations Coordinator</p>
+                                    <p class="timeline-desc">上記作業中の確認事項などを各部署や各営業員に確認, 調整。</p>
+                                    <p class="timeline-child-role">Team Supervisor</p>
+                                    <p class="timeline-desc">メンバーの業務管理や指導、全体の統括を実施。</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023.08</div>
+                    <div class="timeline-content">
+                        <p class="timeline-company">株式会社ギグー（SES）</p>
+                        <p class="timeline-role">Automation Engineer</p>
+                        <div class="timeline-group">
+
+                            <div class="timeline-child">
+                                <div class="timeline-child-date">2023.08(継続)</div>
                                 <div class="timeline-child-content">
                                     <p class="timeline-child-place">現場C（某臨床検査事業）</p>
                                     <p class="timeline-child-role">Data Management Specialist</p>
@@ -230,8 +266,10 @@
                 <div class="skill-category">
                     <p class="skill-category-label">CERTIFICATION</p>
                     <div class="skill-tags">
-                        <span class="skill-tag skill-tag--cert"><i class="fa-solid fa-certificate"></i> MOS 2016 Master</span>
-                        <span class="skill-tag skill-tag--cert"><i class="fa-solid fa-award"></i> VBA Expert Excel VBA Basic</span>
+                        <span class="skill-tag skill-tag--cert"><i class="fa-solid fa-certificate"></i> MOS 2016
+                            Master</span>
+                        <span class="skill-tag skill-tag--cert"><i class="fa-solid fa-award"></i> VBA Expert Excel VBA
+                            Basic</span>
                     </div>
                 </div>
 
@@ -245,6 +283,7 @@
             <h2 class="section-title"><span class="accent">04</span> PORTFOLIO</h2>
             <p class="section-lead">業務ツールが多く公開は叶いませんでしたが、下記はこれまでの成果物の一部です。</p>
             <div class="cards">
+                <!-- 一括データ管理システム -->
                 <div class="card">
                     <div class="card-img-wrap">
                         <img src="assets/images/DataManagementSystem.gif" alt="一括データ管理システム" class="card-img">
@@ -262,6 +301,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- ここまで -->
+                <!-- タイムカード -->
                 <div class="card">
                     <div class="card-img-wrap">
                         <img src="assets/images/timecard.png" alt="タイムカード" class="card-img">
@@ -279,6 +320,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- ここまで -->
+                <!-- 株価スクリーナー -->
                 <div class="card">
                     <div class="card-img-wrap">
                         <div class="card-img-placeholder">
@@ -292,16 +335,22 @@
                             <span class="card-year">2026</span>
                         </div>
                         <h3>株価スクリーナー</h3>
-                        <p>日本株の割安指標（PER / PBR / ROE）を取得・蓄積し、スクリーニングと時系列分析ができるツール。日経225全銘柄を対象に、ThreadPoolExecutorによる並列取得とSQLiteでの永続化を実装。CLI版とStreamlitダッシュボード版の2形態で提供。</p>
+                        <p>日本株の割安指標（PER / PBR /
+                            ROE）を取得・蓄積し、スクリーニングと時系列分析ができるツール。日経225全銘柄を対象に、ThreadPoolExecutorによる並列取得とSQLiteでの永続化を実装。CLI版とStreamlitダッシュボード版の2形態で提供。
+                        </p>
                         <div class="card-tech">
                             <span>Python</span><span>SQLite</span><span>pandas</span><span>Streamlit</span><span>pytest</span>
                         </div>
                     </div>
                 </div>
+                <!-- ここまで -->
+                <!-- ポートフォリオサイト -->
                 <div class="card">
                     <div class="card-img-wrap">
                         <img src="assets/images/thissite.png" alt="ポートフォリオサイト" class="card-img">
-                        <div class="card-overlay"><span>DETAIL</span></div>
+                        <!-- <div class="card-overlay"><span>DETAIL</span></div> -->
+                        <a href="https://github.com/nova-trail/portfolio" target="_blank" rel="noopener noreferrer"
+                            class="card-overlay"><span>DETAIL</span></a>
                     </div>
                     <div class="card-body">
                         <div class="card-meta">
@@ -315,6 +364,28 @@
                         </div>
                     </div>
                 </div>
+                <!-- ここまで -->
+                <!-- 残業リスク分析ツール -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="assets/images/OvertimeAnalyzer.png" alt="残業リスク分析ツール" class="card-img">
+                        <!-- <div class="card-overlay"><span>DETAIL</span></div> -->
+                        <a href="https://github.com/nova-trail/overtime-risk-analyzer" target="_blank"
+                            rel="noopener noreferrer" class="card-overlay"><span>DETAIL</span></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-tag">Python</span>
+                            <span class="card-year">2026</span>
+                        </div>
+                        <h3>残業リスク分析ツール</h3>
+                        <p>2年分の勤怠データから残業傾向を分析。IQRで異常値を検出し、個人別の残業パターンを頻度と歪みの2軸で4象限に分類・可視化した。</p>
+                        <div class="card-tech">
+                            <span>Python</span><span>pandas</span><span>numpy</span><span>matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- ここまで -->
             </div>
         </div>
     </section>
@@ -343,4 +414,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,4 @@
+// script.js
 // ============================================
 // FOOTER 年度 & YEARS EXP（動的）
 // ============================================
@@ -27,14 +28,14 @@ window.addEventListener('load', () => {
 // CUSTOM CURSOR
 // ============================================
 const cursor = document.getElementById('cursor');
-const trail  = document.getElementById('cursor-trail');
+const trail = document.getElementById('cursor-trail');
 
 document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
+    cursor.style.top = e.clientY + 'px';
     setTimeout(() => {
         trail.style.left = e.clientX + 'px';
-        trail.style.top  = e.clientY + 'px';
+        trail.style.top = e.clientY + 'px';
     }, 80);
 });
 
@@ -43,11 +44,11 @@ document.addEventListener('mousemove', e => {
 // ============================================
 (function () {
     const canvas = document.getElementById('particle-canvas');
-    const ctx    = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d');
     let W, H;
 
     function resize() {
-        W = canvas.width  = window.innerWidth;
+        W = canvas.width = window.innerWidth;
         H = canvas.height = window.innerHeight;
     }
     resize();
@@ -62,12 +63,12 @@ document.addEventListener('mousemove', e => {
         const count = Math.floor((W * H) / 6000); // 画面サイズに応じた数
         for (let i = 0; i < count; i++) {
             stars.push({
-                x:       rand(0, W),
-                y:       rand(0, H),
-                r:       rand(0.3, 1.2),
-                alpha:   rand(0.2, 1.0),
+                x: rand(0, W),
+                y: rand(0, H),
+                r: rand(0.3, 1.2),
+                alpha: rand(0.2, 1.0),
                 twinkleSpeed: rand(0.005, 0.02),
-                twinkleDir:   Math.random() > 0.5 ? 1 : -1,
+                twinkleDir: Math.random() > 0.5 ? 1 : -1,
                 minAlpha: rand(0.1, 0.4),
                 maxAlpha: rand(0.6, 1.0),
             });
@@ -79,31 +80,31 @@ document.addEventListener('mousemove', e => {
     let drifters = [];
     function createDrifter() {
         return {
-            x:      rand(0, W),
-            y:      rand(0, H),
-            r:      rand(2.0, 4.5),
-            vx:     rand(-0.15, 0.15),
-            vy:     rand(-0.08, 0.08),
-            alpha:  0,
+            x: rand(0, W),
+            y: rand(0, H),
+            r: rand(2.0, 4.5),
+            vx: rand(-0.15, 0.15),
+            vy: rand(-0.08, 0.08),
+            alpha: 0,
             maxAlpha: rand(0.15, 0.35),
-            fade:   rand(0.003, 0.006),
+            fade: rand(0.003, 0.006),
             fading: false,
             // グロー用
-            glowR:  rand(6, 14),
+            glowR: rand(6, 14),
         };
     }
     for (let i = 0; i < 12; i++) {
         const d = createDrifter();
-        d.alpha  = rand(0, d.maxAlpha);
+        d.alpha = rand(0, d.maxAlpha);
         d.fading = Math.random() > 0.5;
         drifters.push(d);
     }
 
     function drawGlow(x, y, r, glowR, alpha, color) {
         const grad = ctx.createRadialGradient(x, y, 0, x, y, glowR);
-        grad.addColorStop(0,   `rgba(${color}, ${alpha})`);
+        grad.addColorStop(0, `rgba(${color}, ${alpha})`);
         grad.addColorStop(0.4, `rgba(${color}, ${alpha * 0.4})`);
-        grad.addColorStop(1,   `rgba(${color}, 0)`);
+        grad.addColorStop(1, `rgba(${color}, 0)`);
         ctx.beginPath();
         ctx.arc(x, y, glowR, 0, Math.PI * 2);
         ctx.fillStyle = grad;
@@ -117,7 +118,7 @@ document.addEventListener('mousemove', e => {
         stars.forEach(s => {
             s.alpha += s.twinkleSpeed * s.twinkleDir;
             if (s.alpha >= s.maxAlpha) { s.alpha = s.maxAlpha; s.twinkleDir = -1; }
-            if (s.alpha <= s.minAlpha) { s.alpha = s.minAlpha; s.twinkleDir =  1; }
+            if (s.alpha <= s.minAlpha) { s.alpha = s.minAlpha; s.twinkleDir = 1; }
 
             ctx.beginPath();
             ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
@@ -162,7 +163,7 @@ document.addEventListener('mousemove', e => {
 // TYPING ANIMATION
 // ============================================
 (function () {
-    const el   = document.getElementById('typed-eyebrow');
+    const el = document.getElementById('typed-eyebrow');
     const text = 'Automation Engineer based in Tokyo';
     let i = 0;
     function rand(a, b) { return Math.random() * (b - a) + a; }
@@ -178,7 +179,7 @@ document.addEventListener('mousemove', e => {
 // ============================================
 // NAV
 // ============================================
-const nav      = document.getElementById('nav');
+const nav = document.getElementById('nav');
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -231,7 +232,7 @@ if (skillsSection) skillObserver.observe(skillsSection);
 // ============================================
 // ハンバーガーメニュー
 // ============================================
-const hamburger  = document.getElementById('hamburger');
+const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 
 hamburger.addEventListener('click', () => {

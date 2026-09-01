@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>HIRO'S PORTFOLIO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hiroyuki Sei">
+    <meta name="description" content="Hiroyuki Seiのポートフォリオ">
+    <meta name="robots" content="noindex">
+
+    <!-- OGP -->
+    <meta property="og:title" content="HIRO'S PORTFOLIO">
+    <meta property="og:description" content="VBAやPythonを使った業務効率化ツールの開発が専門。Automation Engineer based in Tokyo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com"><!-- ドメイン決まったら差し替え -->
+    <meta property="og:image" content="https://your-domain.com/assets/images/thissite.png"><!-- ドメイン決まったら差し替え -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="HIRO'S PORTFOLIO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HIRO'S PORTFOLIO">
+    <meta name="twitter:description" content="VBAやPythonを使った業務効率化ツールの開発が専門。Automation Engineer based in Tokyo.">
+    <meta name="twitter:image" content="https://your-domain.com/assets/images/thissite.png"><!-- ドメイン決まったら差し替え -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <div id="loading">
+        <div class="loading-inner">
+            <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+            <p class="loading-text">INITIALIZING<span class="blink">_</span></p>
+        </div>
+    </div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <div class="nav-logo">HS<span class="accent">.</span></div>
+        <div class="nav-links">
+            <a href="#hero">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#career">CAREER</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#portfolio">PORTFOLIO</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#hero"       onclick="closeMenu()">HOME</a>
+        <a href="#about"      onclick="closeMenu()">ABOUT</a>
+        <a href="#career"     onclick="closeMenu()">CAREER</a>
+        <a href="#skills"     onclick="closeMenu()">SKILLS</a>
+        <a href="#portfolio"  onclick="closeMenu()">PORTFOLIO</a>
+        <a href="#contact"    onclick="closeMenu()">CONTACT</a>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow"><span class="accent">//</span> <span id="typed-eyebrow"></span></p>
+            <h1 class="hero-title">HIRO'S<br><span class="accent-outline">PORTFOLIO</span></h1>
+            <p class="hero-sub">業務自動化 <span class="accent">/</span> 効率化ツールの開発</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn-hero">VIEW WORK</a>
+                <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" class="btn-hero btn-ghost">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+        <a href="#about" class="scrolldown">
+            <span class="scroll-line"></span>
+            <span class="scroll-label">SCROLL</span>
+        </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="section-inner">
+            <h2 class="section-title"><span class="accent">01</span> ABOUT</h2>
+            <div class="about-grid">
+                <div class="about-left">
+                    <img src="assets/images/profile.jpg" alt="Hiroyuki Sei" class="profile-img">
+                    <p class="profile-name">清 弘幸</p>
+                    <p class="profile-name-en">Hiroyuki Sei</p>
+                    <p class="profile-title-label">Automation Engineer</p>
+                    <div class="profile-links">
+                        <a href="https://github.com/example" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <p class="about-bio">VBAやPythonを使った業務効率化ツールの開発が専門。エンジニアとして複数の現場で業務自動化の開発・運用・支援に従事。</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-num" id="years-exp">-<span class="accent">+</span></span>
+                            <span class="stat-label">YEARS EXP</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">10<span class="accent">+</span></span>
+                            <span class="stat-label">PROJECTS</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">2<span class="accent">+</span></span>
+                            <span class="stat-label">CLIENTS</span>
+                        </div>
+                    </div>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <i class="fa-solid fa-certificate accent"></i>
+                            <span>MOS 2016 Master</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fa-solid fa-award accent"></i>
+                            <span>VBA Expert Excel VBA Basic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAREER -->
+    <section id="career" class="section">
+        <div class="section-inner">
+            <h2 class="section-title"><span class="accent">02</span> CAREER</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2017.05</div>
+                    <div class="timeline-content">
+                        <p class="timeline-company">株式会社 学研教育みらい</p>
+                        <p class="timeline-role">Learning Support Specialist(Part-Time Job)</p>
+                        <p class="timeline-desc">某自治体、学習支援事業にて指導員 / 家庭教師として従事。</p>
+                        <p class="timeline-desc">講師のリーダーとして、勤務状況や進捗度合いを管理。</p>
+                        <p class="timeline-role">Assistant Instructor(Part-Time Job)</p>
+                        <p class="timeline-desc">某私立小学校、プログラミング講座(Scratch)にてアシスタントとして従事。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2022.08</div>
+                    <div class="timeline-content">
+                        <p class="timeline-company">株式会社MEELL（SES）</p>
+                        <p class="timeline-role">Automation Engineer</p>
+                        <div class="timeline-group">
+
+                            <div class="timeline-child">
+                                <div class="timeline-child-date">2022.08</div>
+                                <div class="timeline-child-content">
+                                    <p class="timeline-child-place">現場X（某IoT製品製造業）</p>
+                                    <p class="timeline-child-role">Call Center Agent</p>
+                                    <p class="timeline-desc">某X社のIoT製品におけるヘルプデスク、および修理/返品受付。</p>
+                                    <p class="timeline-desc">各種対応の他に、受電履歴や対応表の整備、運用を実施。</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-child">
+                                <div class="timeline-child-date">2023.03</div>
+                                <div class="timeline-child-content">
+                                    <p class="timeline-child-place">現場C（某臨床検査事業）</p>
+                                    <p class="timeline-child-role">Data Management Specialist</p>
+                                    <p class="timeline-desc">病院等施設の基本情報、設定情報などの正確性を確認、DB投入を実施。</p>
+                                    <p class="timeline-child-role">VBA Developer</p>
+                                    <p class="timeline-desc">上記作業の効率化, 工数削減の為のVBAツールを開発。</p>
+                                    <p class="timeline-child-role">Operations Coordinator</p>
+                                    <p class="timeline-desc">上記作業中の確認事項などを各部署や各営業員に確認, 調整。</p>
+                                    <p class="timeline-child-role">Team Supervisor</p>
+                                    <p class="timeline-desc">メンバーの業務管理や指導、全体の統括を実施。</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <div class="section-inner">
+            <h2 class="section-title"><span class="accent">03</span> SKILLS</h2>
+            <div class="skills-categories">
+
+                <div class="skill-category">
+                    <p class="skill-category-label">MAIN</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--main"><i class="fa-solid fa-file-excel"></i> VBA</span>
+                        <span class="skill-tag skill-tag--main"><i class="fa-solid fa-database"></i> SQL</span>
+                        <span class="skill-tag skill-tag--main"><i class="fa-brands fa-python"></i> Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <p class="skill-category-label">TOOLS</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fa-solid fa-table"></i> Excel</span>
+                        <span class="skill-tag"><i class="fa-solid fa-filter"></i> Power Query</span>
+                        <span class="skill-tag"><i class="fa-solid fa-terminal"></i> VBScript</span>
+                        <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML / CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <p class="skill-category-label">LEARNING</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--learning"><i class="fa-brands fa-js"></i> JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <p class="skill-category-label">CERTIFICATION</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--cert"><i class="fa-solid fa-certificate"></i> MOS 2016 Master</span>
+                        <span class="skill-tag skill-tag--cert"><i class="fa-solid fa-award"></i> VBA Expert Excel VBA Basic</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section">
+        <div class="section-inner">
+            <h2 class="section-title"><span class="accent">04</span> PORTFOLIO</h2>
+            <p class="section-lead">業務ツールが多く公開は叶いませんでしたが、下記はこれまでの成果物の一部です。</p>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="assets/images/DataManagementSystem.gif" alt="一括データ管理システム" class="card-img">
+                        <div class="card-overlay"><span>DETAIL</span></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-tag">Excel VBA</span>
+                            <span class="card-year">2026</span>
+                        </div>
+                        <h3>一括データ管理システム</h3>
+                        <p>ログイン認証、データの登録・編集・削除・検索、CSVエクスポート、ダッシュボードによる可視化機能を実装した社内データ管理システム。</p>
+                        <div class="card-tech">
+                            <span>VBA</span><span>Excel</span><span>UserForm</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="assets/images/timecard.png" alt="タイムカード" class="card-img">
+                        <div class="card-overlay"><span>DETAIL</span></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-tag">VBScript</span>
+                            <span class="card-year">2024</span>
+                        </div>
+                        <h3>タイムカード</h3>
+                        <p>ダブルクリック1回で出退勤時刻をExcelに自動記録。テレワーク／出社の選択、当月シートの自動生成、打刻後のブラウザ自動起動などを実装。</p>
+                        <div class="card-tech">
+                            <span>VBScript</span><span>Excel</span><span>WSH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="card-img-placeholder">
+                            <span class="card-placeholder-text">$</span>
+                        </div>
+                        <div class="card-overlay"><span>DETAIL</span></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-tag">Python</span>
+                            <span class="card-year">2026</span>
+                        </div>
+                        <h3>株価スクリーナー</h3>
+                        <p>日本株の割安指標（PER / PBR / ROE）を取得・蓄積し、スクリーニングと時系列分析ができるツール。日経225全銘柄を対象に、ThreadPoolExecutorによる並列取得とSQLiteでの永続化を実装。CLI版とStreamlitダッシュボード版の2形態で提供。</p>
+                        <div class="card-tech">
+                            <span>Python</span><span>SQLite</span><span>pandas</span><span>Streamlit</span><span>pytest</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="assets/images/thissite.png" alt="ポートフォリオサイト" class="card-img">
+                        <div class="card-overlay"><span>DETAIL</span></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-tag">HTML / CSS / JS</span>
+                            <span class="card-year">2024</span>
+                        </div>
+                        <h3>ポートフォリオサイト</h3>
+                        <p>本サイト。星空パーティクル・タイピングアニメーション・カスタムカーソルなどの演出をVanilla JSで実装。レスポンシブ対応。</p>
+                        <div class="card-tech">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <div class="section-inner contact-inner">
+            <h2 class="section-title"><span class="accent">05</span> CONTACT</h2>
+            <p class="contact-lead">業務改善や自動化ツールの開発について、<br>お気軽にお話しできれば嬉しいです。</p>
+            <div class="contact-links">
+                <a href="mailto:example@example.com" class="contact-btn">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>E-mail</span>
+                </a>
+                <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" class="contact-btn">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-copy">&copy; <span id="footer-year"></span> Hiroyuki Sei</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
